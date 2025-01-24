@@ -2,7 +2,7 @@ alert("This is alert box");
 var visitorName=prompt("what is your name");
 console.log(visitorName);
 document.addEventListener("DOMContentLoaded", () => {
-  // تحديث الكمية
+  
   const updateQuantity = (btn, isIncrement) => {
     const quantitySpan = btn.parentElement.querySelector(".quantity");
     const unitPrice = parseFloat(btn.closest(".card-body").querySelector(".unit-price").textContent.replace("$", ""));
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTotalPrice();
   };
 
-  // تحديث السعر الإجمالي
+ 
   const updateTotalPrice = () => {
     let totalPrice = 0;
     document.querySelectorAll(".card-body").forEach((card) => {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".total").textContent = `${totalPrice} $`;
   };
 
-  // حذف العناصر
+  
   document.querySelectorAll(".fa-trash-alt").forEach((trashBtn) => {
     trashBtn.addEventListener("click", () => {
       trashBtn.closest(".card-body").remove();
@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // تعديل الكمية
   document.querySelectorAll(".fa-plus-circle").forEach((plusBtn) => {
     plusBtn.addEventListener("click", () => updateQuantity(plusBtn, true));
   });
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     minusBtn.addEventListener("click", () => updateQuantity(minusBtn, false));
   });
 
-  // زر الإعجاب
+ 
   document.querySelectorAll(".fa-heart").forEach((heartBtn) => {
     heartBtn.addEventListener("click", () => {
       heartBtn.classList.toggle("text-danger");
